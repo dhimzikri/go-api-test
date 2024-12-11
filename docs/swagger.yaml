@@ -1,0 +1,975 @@
+basePath: /api
+definitions:
+  helpers.ResponseWithData:
+    properties:
+      data: {}
+      message:
+        type: string
+      responsecode:
+        type: integer
+      status:
+        type: string
+    type: object
+  helpers.ResponseWithoutData:
+    properties:
+      message:
+        type: string
+      responsecode:
+        type: integer
+      status:
+        type: string
+    type: object
+  models.CustomerCard:
+    properties:
+      applicationid:
+        example: 421A202208016092
+        type: string
+    type: object
+  models.DataAssignFC:
+    properties:
+      gps:
+        example: 0;0
+        type: string
+      parameter:
+        example: "-1"
+        type: string
+      username:
+        example: "1879"
+        type: string
+    type: object
+  models.DataAssignFC2:
+    properties:
+      agreementno:
+        type: string
+      applicationid:
+        type: string
+      branchid:
+        type: string
+      flag:
+        type: integer
+      parameter:
+        type: string
+      seqid:
+        type: string
+    type: object
+  models.DataColl:
+    properties:
+      searchdata:
+        type: string
+      token:
+        example: $2y$10$LfW07MZ0QZaXYv093xT0huWA8o1gWwWhJg3UcrXdAhJq47OpHm.5e
+        type: string
+      username:
+        example: "1879"
+        type: string
+    type: object
+  models.FDataAssignFC:
+    properties:
+      gps:
+        example: 0;0
+        type: string
+      orderby:
+        example: applicationid
+        type: string
+      parameter:
+        example: "-1"
+        type: string
+      searchdata:
+        example: ""
+        type: string
+      username:
+        example: "1879"
+        type: string
+    type: object
+  models.FieldCollHD:
+    properties:
+      agreementno:
+        type: string
+      token:
+        example: $2y$10$LfW07MZ0QZaXYv093xT0huWA8o1gWwWhJg3UcrXdAhJq47OpHm.5e
+        type: string
+      username:
+        example: "1879"
+        type: string
+    type: object
+  models.FindDataAssignFC:
+    properties:
+      actionresult:
+        type: string
+      agentname:
+        type: string
+      agreementno:
+        type: string
+      angske:
+        type: string
+      applicationid:
+        type: string
+      branchid:
+        type: string
+      bucketid:
+        type: string
+      cgid:
+        type: string
+      colorflagsort:
+        type: string
+      daysoverdue:
+        type: string
+      flagsort:
+        type: integer
+      gender:
+        type: string
+      gps:
+        type: string
+      is_paid:
+        type: integer
+      isaqt:
+        type: integer
+      jarak:
+        type: string
+      lastactivity:
+        type: string
+      mailingadress:
+        type: string
+      namadebitur:
+        type: string
+      parameter:
+        type: string
+      ptpydate:
+        type: string
+      radius:
+        type: string
+      saldopokok:
+        type: string
+      zipcode:
+        type: string
+    type: object
+  models.FindDataAssignFcHistory:
+    properties:
+      actionresult:
+        type: string
+      agreementno:
+        type: string
+      angske:
+        type: string
+      applicationid:
+        type: string
+      branchid:
+        type: string
+      bucketid:
+        type: string
+      cgid:
+        type: string
+      daysoverdue:
+        type: string
+      flagsort:
+        type: integer
+      gender:
+        type: string
+      is_paid:
+        type: integer
+      isaqt:
+        type: integer
+      mailingadress:
+        type: string
+      namadebitur:
+        type: string
+      parameter:
+        type: string
+      ptpydate:
+        type: string
+      saldopokok:
+        type: string
+      seqid:
+        type: string
+      zipcode:
+        type: string
+    type: object
+  models.GetCollection:
+    properties:
+      applicationid:
+        type: string
+      customerid:
+        type: string
+    type: object
+  models.GetCollectionHistory:
+    properties:
+      activity:
+        type: string
+      activitydate:
+        type: string
+      result:
+        type: string
+      resultid:
+        type: string
+    type: object
+  models.GetCustomerCard:
+    properties:
+      applicationid:
+        type: string
+      duedate:
+        type: string
+      insseqno:
+        type: string
+      installmentamount:
+        type: string
+      paidamount:
+        type: string
+    type: object
+  models.GetDataAssignFC:
+    properties:
+      actionresult:
+        type: string
+      agentname:
+        type: string
+      agreementno:
+        type: string
+      angske:
+        type: string
+      applicationid:
+        type: string
+      branchid:
+        type: string
+      bucketid:
+        type: string
+      cgid:
+        type: string
+      colorflagsort:
+        type: string
+      daysoverdue:
+        type: string
+      flagsort:
+        type: integer
+      gender:
+        type: string
+      gps:
+        type: string
+      is_paid:
+        type: integer
+      isaqt:
+        type: integer
+      jarak:
+        type: string
+      lastactivity:
+        type: string
+      mailingadress:
+        type: string
+      namadebitur:
+        type: string
+      parameter:
+        type: string
+      ptpydate:
+        type: string
+      radius:
+        type: string
+      saldopokok:
+        type: string
+      zipcode:
+        type: string
+    type: object
+  models.GetDataAssignFcHistory:
+    properties:
+      actionresult:
+        type: string
+      agentname:
+        type: string
+      agreementno:
+        type: string
+      angske:
+        type: string
+      applicationid:
+        type: string
+      branchid:
+        type: string
+      bucketid:
+        type: string
+      cgid:
+        type: string
+      colorflagsort:
+        type: string
+      daysoverdue:
+        type: string
+      flagsort:
+        type: integer
+      gender:
+        type: string
+      gps:
+        type: string
+      is_paid:
+        type: integer
+      isaqt:
+        type: integer
+      jarak:
+        type: string
+      lastactivity:
+        type: string
+      mailingadress:
+        type: string
+      namadebitur:
+        type: string
+      parameter:
+        type: string
+      ptpydate:
+        type: string
+      radius:
+        type: string
+      saldopokok:
+        type: string
+      zipcode:
+        type: string
+    type: object
+  models.GetLovGroup:
+    properties:
+      code:
+        type: string
+    type: object
+  models.GetTblDataColl:
+    properties:
+      activity:
+        type: string
+      agentid:
+        type: string
+      name:
+        type: string
+      notactivity:
+        type: string
+      pk:
+        type: integer
+    type: object
+  models.GetTblFieldCollHD:
+    properties:
+      agreementno:
+        type: string
+      answer:
+        type: string
+      applicationid:
+        type: string
+      branchid:
+        type: string
+      bussinessdate:
+        type: string
+      customerid:
+        type: string
+      flag:
+        type: string
+      pk:
+        type: integer
+      plandate:
+        type: string
+      questionlabel:
+        type: string
+      refid:
+        type: string
+      type_:
+        type: string
+    type: object
+  models.GetTblMappingResult:
+    properties:
+      ismandatory:
+        type: integer
+      refid:
+        type: string
+      resultid:
+        type: string
+    type: object
+  models.GetTblQuestion:
+    properties:
+      agreementno:
+        type: string
+      answer:
+        type: string
+      applicationid:
+        type: string
+      branchid:
+        type: string
+      bussinessdate:
+        type: string
+      customerid:
+        type: string
+      date:
+        type: string
+      flag:
+        type: string
+      foto:
+        type: string
+      lovgroup:
+        type: string
+      pk:
+        type: integer
+      questionlabel:
+        type: string
+      refid:
+        type: string
+      type_:
+        type: string
+    type: object
+  models.GetTblResultData:
+    properties:
+      agreementno:
+        type: string
+      alamat:
+        type: string
+      applicationid:
+        type: string
+      branchid:
+        type: string
+      customername:
+        type: string
+      flag:
+        type: string
+      foto:
+        type: string
+      gps:
+        type: string
+      pk:
+        type: integer
+      plandate:
+        type: string
+      zipcode:
+        type: string
+    type: object
+  models.Login:
+    properties:
+      password:
+        example: pass,123
+        type: string
+      username:
+        example: "1879"
+        type: string
+    type: object
+  models.MyProfile:
+    properties:
+      real_name:
+        type: string
+      username:
+        type: string
+    type: object
+  models.UserLogin:
+    properties:
+      base64qrcode:
+        type: string
+      bucketcoll:
+        type: string
+      email:
+        type: string
+      greetings:
+        type: string
+      hp:
+        type: string
+      last_login:
+        type: string
+      password:
+        type: string
+      realname:
+        type: string
+      token:
+        type: string
+      user_name:
+        type: string
+    type: object
+host: localhost:9090
+info:
+  contact:
+    email: dimas.zikri@cnaf.co.id
+    name: API CNAF MOBILE
+    url: https://www.cnaf.co.id/
+  description: |-
+    CIMOL API with Golang.
+    Golang memiliki keunggulan dalam skalabilitas horizontal dan pemeliharaan kode yang lebih sederhana,
+    Golang juga memiliki keamanan bawaan dan memudahkan pencegahan beberapa jenis serangan, serta
+    kinerja yang signifikan dalam kasus pengolahan beban kerja tinggi dan pembuatan API yang membutuhkan respons cepat.
+  title: CIMOL API with Golang
+  version: "1.0"
+paths:
+  /auth/login:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Payload Body [RAW]
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.Login'
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.UserLogin'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/helpers.ResponseWithoutData'
+      summary: Login into API Cimol
+      tags:
+      - AUTH
+  /auth/logout:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Payload Body [RAW]
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.Login'
+      - description: string example
+        in: header
+        name: Authorization
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/helpers.ResponseWithoutData'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/helpers.ResponseWithoutData'
+      summary: Logout API Cimol
+      tags:
+      - AUTH
+  /tools/FindDataAssignFC:
+    post:
+      consumes:
+      - application/json
+      description: OAuth protects our entity endpoints
+      parameters:
+      - description: Payload Body [RAW]
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.FDataAssignFC'
+      - description: token get from login
+        in: header
+        name: Authorization
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/helpers.ResponseWithData'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/models.FindDataAssignFC'
+                  type: array
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/helpers.ResponseWithoutData'
+      summary: Find Data Assign FC
+      tags:
+      - DataAssignFC
+  /tools/FindDataAssignFcHistory:
+    post:
+      consumes:
+      - application/json
+      description: OAuth protects our entity endpoints
+      parameters:
+      - description: Payload Body [RAW]
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.FDataAssignFC'
+      - description: token get from login
+        in: header
+        name: Authorization
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/helpers.ResponseWithData'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/models.FindDataAssignFcHistory'
+                  type: array
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/helpers.ResponseWithoutData'
+      summary: Find Data Assign FC History
+      tags:
+      - DataAssignFC
+  /tools/GetCollectionHistory:
+    post:
+      consumes:
+      - application/json
+      description: OAuth protects our entity endpoints
+      parameters:
+      - description: Payload Body [RAW]
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.GetCollection'
+      - description: token get from login
+        in: header
+        name: Authorization
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/helpers.ResponseWithData'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/models.GetCollectionHistory'
+                  type: array
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/helpers.ResponseWithoutData'
+      summary: Get Collection History
+      tags:
+      - CollectionHistory
+  /tools/GetCustomerCard:
+    post:
+      consumes:
+      - application/json
+      description: OAuth protects our entity endpoints
+      parameters:
+      - description: Payload Body [RAW]
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.CustomerCard'
+      - description: token get from login
+        in: header
+        name: Authorization
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/helpers.ResponseWithData'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/models.GetCustomerCard'
+                  type: array
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/helpers.ResponseWithoutData'
+      summary: GetCustomerCard
+      tags:
+      - CustomerCard
+  /tools/GetDataAssignFC:
+    post:
+      consumes:
+      - application/json
+      description: OAuth protects our entity endpoints
+      parameters:
+      - description: Payload Body [RAW]
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.DataAssignFC'
+      - description: token get from login
+        in: header
+        name: Authorization
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/helpers.ResponseWithData'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/models.GetDataAssignFC'
+                  type: array
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/helpers.ResponseWithoutData'
+      summary: Get Data Assign FC
+      tags:
+      - DataAssignFC
+  /tools/GetDataAssignFcHistory:
+    post:
+      consumes:
+      - application/json
+      description: OAuth protects our entity endpoints
+      parameters:
+      - description: Payload Body [RAW]
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.DataAssignFC'
+      - description: token get from login
+        in: header
+        name: Authorization
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/helpers.ResponseWithData'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/models.GetDataAssignFcHistory'
+                  type: array
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/helpers.ResponseWithoutData'
+      summary: Get Data Assign FC History
+      tags:
+      - DataAssignFC
+  /tools/GetLovGroup:
+    post:
+      consumes:
+      - application/json
+      description: OAuth protects our entity endpoints
+      parameters:
+      - description: Payload Body [RAW]
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.DataAssignFC'
+      - description: token get from login
+        in: header
+        name: Authorization
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/helpers.ResponseWithData'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/models.GetLovGroup'
+                  type: array
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/helpers.ResponseWithoutData'
+      summary: Get LovGroup
+      tags:
+      - LovGroup
+  /tools/GetTblDataColl:
+    post:
+      consumes:
+      - application/json
+      description: OAuth protects our entity endpoints
+      parameters:
+      - description: Payload Body [RAW]
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.DataColl'
+      - description: token get from login
+        in: header
+        name: Authorization
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/helpers.ResponseWithData'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/models.GetTblDataColl'
+                  type: array
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/helpers.ResponseWithoutData'
+      summary: Get Data Coll
+      tags:
+      - DataColl
+  /tools/GetTblFieldCollHD:
+    post:
+      consumes:
+      - application/json
+      description: OAuth protects our entity endpoints
+      parameters:
+      - description: Payload Body [RAW]
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.FieldCollHD'
+      - description: token get from login
+        in: header
+        name: Authorization
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/helpers.ResponseWithData'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/models.GetTblFieldCollHD'
+                  type: array
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/helpers.ResponseWithoutData'
+      summary: Get data Field Coll HD
+      tags:
+      - DataColl
+  /tools/GetTblMappingResult:
+    get:
+      description: OAuth protects our entity endpoints
+      parameters:
+      - description: token get from login
+        in: header
+        name: Authorization
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/helpers.ResponseWithData'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/models.GetTblMappingResult'
+                  type: array
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/helpers.ResponseWithoutData'
+      summary: Get data Mapping Result
+      tags:
+      - MappingResultData
+  /tools/GetTblQuestion:
+    post:
+      consumes:
+      - application/json
+      description: OAuth protects our entity endpoints
+      parameters:
+      - description: Payload Body [RAW]
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.DataAssignFC2'
+      - description: token get from login
+        in: header
+        name: Authorization
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/helpers.ResponseWithData'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/models.GetTblQuestion'
+                  type: array
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/helpers.ResponseWithoutData'
+      summary: Get Question
+      tags:
+      - Question
+  /tools/GetTblResultData:
+    post:
+      consumes:
+      - application/json
+      description: OAuth protects our entity endpoints
+      parameters:
+      - description: Payload Body [RAW]
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.DataAssignFC2'
+      - description: token get from login
+        in: header
+        name: Authorization
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/helpers.ResponseWithData'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/models.GetTblResultData'
+                  type: array
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/helpers.ResponseWithoutData'
+      summary: Get the Result Data
+      tags:
+      - DataColl
+  /tools/Me:
+    get:
+      description: OAuth protects our entity endpoints
+      parameters:
+      - description: string example
+        in: header
+        name: Authorization
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            allOf:
+            - $ref: '#/definitions/helpers.ResponseWithData'
+            - properties:
+                data:
+                  items:
+                    $ref: '#/definitions/models.MyProfile'
+                  type: array
+              type: object
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/helpers.ResponseWithoutData'
+      summary: Get Data Assign FC
+      tags:
+      - MyProfile
+schemes:
+- http
+- https
+swagger: "2.0"
