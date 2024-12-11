@@ -29,3 +29,4 @@ key_star.cnaf.co.id.key
 localhost.csr
 localhost.key
 star.cnaf.co.id.pem
+intermediate.crt
