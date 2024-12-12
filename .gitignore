@@ -30,3 +30,5 @@ localhost.csr
 localhost.key
 star.cnaf.co.id.pem
 intermediate.crt
+/config/.*
+database.go
